@@ -9,6 +9,23 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: "interviews"
+    label: "Interviews"
+    folder: "src/pages/interview"
+    create: true
+    slug: "interviews/{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "interview"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Featured Image", name: "featuredimage", widget: image}
+      - {label: "Interview Date", name: "date", widget: "datetime"}
+      - {label: "Interviewer", name: "interviewerName", widget: "string"}
+      - {label: "Interviewee", name: "intervieweeName", widget: "string"}
+      - {label: "Transcription", name: "transcription", widget: "markdown"}
+      - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
+      - {label: "Subjects", name: "subjects", widget: "list"}
+
+collections:
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
