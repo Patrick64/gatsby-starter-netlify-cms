@@ -13,7 +13,7 @@ collections:
     label: "Interviews"
     folder: "src/pages/interview"
     create: true
-    slug: "interviews/{{slug}}"
+    slug: "interview/{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "interview"}
       - {label: "Title", name: "title", widget: "string"}
