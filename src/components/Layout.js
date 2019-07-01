@@ -13,7 +13,7 @@ const TemplateWrapper = ({ children }) => {
         <html lang="en" />
         <title>{title}</title>
         <meta name="description" content={description} />
-
+        <link rel="stylesheet" href={ "/css/site.css?v=" + Math.round(Math.random()*1000) }/>
         <link
           rel="apple-touch-icon"
           sizes="180x180"
