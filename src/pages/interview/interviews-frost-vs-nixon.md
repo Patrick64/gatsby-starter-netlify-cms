@@ -1,7 +1,7 @@
 ---
 templateKey: interview
 title: Frost vs Nixon
-featuredimage: /img/blog-index.jpg
+featuredimage: /img/chemex.jpg
 date: 2019-06-28T09:16:49.281Z
 interviewerName: Frost
 intervieweeName: Nixon
