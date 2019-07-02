@@ -5,9 +5,13 @@ import PropTypes from "prop-types";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
 // import Content, { HTMLContent } from '../components/Content'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+
 
 export default class Interview extends React.Component {
   render() {
+    var featuredimage  = this.props.data.markdownRemark.frontmatter.featuredimage;
+    var post = this.props.data.markdownRemark;
     
     return (
       <Layout>
@@ -21,6 +25,9 @@ export default class Interview extends React.Component {
                 <p>Interviewer: {this.props.data.markdownRemark.frontmatter.interviewerName} </p>
                 <p>Interviewee: {this.props.data.markdownRemark.frontmatter.intervieweeName} </p>
                 <div className="content" dangerouslySetInnerHTML={{ __html: this.props.data.markdownRemark.html }} />
+                {featuredimage ? <img src={featuredimage.childImageSharp.fluid.src } /> : ''}
+                
+
               </div>
             </div>
           </div>
@@ -40,6 +47,13 @@ export const pageQuery = graphql`
         title
         interviewerName
         intervieweeName
+        featuredimage {
+          childImageSharp {
+            fluid(maxWidth: 120, quality: 100) {
+              src
+            }
+          }
+        }
       }
     }
   }
