@@ -6,14 +6,14 @@ import './all.sass'
 import useSiteMetadata from './SiteMetadata'
 
 const TemplateWrapper = ({ children }) => {
-  const { title, description } = useSiteMetadata()
+  const { title, description, buildTime } = useSiteMetadata()
   return (
     <div>
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
         <meta name="description" content={description} />
-        <link rel="stylesheet" href={ "/css/site.css?v=" + Math.round(Math.random()*1000) }/>
+        <link rel="stylesheet" href={ "/css/site.css?v=" + buildTime }/>
         <link
           rel="apple-touch-icon"
           sizes="180x180"
